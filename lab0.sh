@@ -105,18 +105,18 @@ ls -lR
 echo 'Task 4.1'
 touch /tmp/wordcount
 
-chmod 746 tyrogue7/stoutland
+chmod u+w  tyrogue7/stoutland
 wc -m tyrogue7/stoutland  >>/tmp/wordcount  2>>/tmp/error4
 wc -m tyrogue7/carracosta  >>/tmp/wordcount  2>>/tmp/error4
-chmod 746 tyrogue7/stoutland
+
 cat /tmp/wordcount
 
 ### task 4.2
 #. Вывести три последних элемента рекурсивного списка имен и атрибутов файлов в директории lab0,
 #список отсортировать по возрастанию количества жестких ссылок, добавить вывод ошибок доступа в стандартный поток вывода
 echo 'Task 4.2'
-    chmod 735 zorua9
-    chmod 737 zorua9/graveler
+    chmod u+w  zorua9
+    chmod u+w  zorua9/graveler
 ls -l | tail -3 | sort -k2
 
 # task 4.3
@@ -134,13 +134,13 @@ ls -ltrd **/*a 2>/tmp/error4 | tail -2
 # task 4.5
 #Вывести рекурсивно список имен файлов в директории zorua9, список отсортировать по имени a->z, подавить вывод ошибок доступа
 echo 'task 4.5'
-chmod 735 zorua9
+chmod u+rw  zorua9
 ls -l zorua9 | sort 
 
 # task 4.6
 #Вывести содержимое файла luxray8 с номерами строк, исключить строки, заканчивающиеся на 'm', ошибки доступа не подавлять и не перенаправлять
 echo 'task 4.6'
-chmod 766 luxray8
+chmod u+rw  luxray8
 sed '/m/d' luxray8 | nl 
 
 # Task 5
