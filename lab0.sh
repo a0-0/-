@@ -103,21 +103,21 @@ ls -lR
 ## Подсчитать количество символов содержимого файлов: stoutland, carracosta, результат записать  в файл в директории /tmp, ошибки доступа перенаправить в файл в директории /tmp
 
 echo 'Task 4.1'
+
 touch /tmp/wordcount
 
-chmod u+w  tyrogue7/stoutland
-wc -m tyrogue7/stoutland  >>/tmp/wordcount  2>>/tmp/error4
-wc -m tyrogue7/carracosta  >>/tmp/wordcount  2>>/tmp/error4
-
+chmod 746 tyrogue7/stoutland
+wc -m tyrogue7/stoutland  >>/tmp/wordcount  2>>/tmp/error1
+wc -m tyrogue7/carracosta  >>/tmp/wordcount  2>>/tmp/error1
+chmod 746 tyrogue7/stoutland
 cat /tmp/wordcount
-
 ### task 4.2
 #. Вывести три последних элемента рекурсивного списка имен и атрибутов файлов в директории lab0,
-#список отсортировать по возрастанию количества жестких ссылок, добавить вывод ошибок доступа в стандартный поток вывода
+#список отсортировать по возрастанию количества жестких ссылок, подавить вывод ошибок доступа
 echo 'Task 4.2'
     chmod u+w  zorua9
     chmod u+w  zorua9/graveler
-ls -l | tail -3 | sort -k2
+ls -l | tail -3 | sort -k2  2>>/dev/null
 
 # task 4.3
 #Рекурсивно вывести содержимое файлов с номерами строк из директории lab0,
@@ -135,7 +135,7 @@ ls -ltrd **/*a 2>/tmp/error4 | tail -2
 #Вывести рекурсивно список имен файлов в директории zorua9, список отсортировать по имени a->z, подавить вывод ошибок доступа
 echo 'task 4.5'
 chmod u+rw  zorua9
-ls -l zorua9 | sort 
+ls -l zorua9 | sort   2>>/dev/null
 
 # task 4.6
 #Вывести содержимое файла luxray8 с номерами строк, исключить строки, заканчивающиеся на 'm', ошибки доступа не подавлять и не перенаправлять
